@@ -2,523 +2,298 @@ import './App.css';
 import { Carousel } from 'flowbite-react';
 import { Avatar } from 'flowbite-react';
 import { Timeline } from 'flowbite-react';
+import { Collapse } from 'flowbite';
+
 
 function App() {
 	return (
 		<div className="App flex flex-col">
-			<div className='h-screen flex flex-col items-center mb-8'>
-				<div className='w-full' style={{height: '7%'}}>
-					<nav class="w-full h-full flex bg-zinc-800 border-gray-200 px-2">
-						<div className='h-full w-1/3'></div>
-						<div className='h-full w-1/3 flex justify-center items-center'>
-						<a href="https://flowbite.com/" class="flex items-center">
-							<img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-							<span class="self-center text-xl font-semibold whitespace-nowrap text-white">Название</span>
+			<header className='w-full'>
+				<nav class="bg-zinc-800 border-gray-200 dark:bg-gray-900">
+					<div class="relative max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+						<a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+							<img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+							<span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Flowbite</span>
 						</a>
+						<button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-zinc-600 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+							<span class="sr-only">Open main menu</span>
+							<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+							</svg>
+						</button>
+						<div class="absolute top-16 right-6 z-10 hidden w-auto md:block md:w-auto md:static md:top-0 md:right-0" id="navbar-default">
+						<ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-zinc-800 rounded-lg bg-zinc-800 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-zinc-800">
+							<li>
+							<a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 text-white md:text-blue-500" aria-current="page">Home</a>
+							</li>
+							<li>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">About</a>
+							</li>
+							<li>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:dark:hover:bg-transparent">Services</a>
+							</li>
+							<li>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+							</li>
+							<li>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:dark:hover:bg-transparent">Contact</a>
+							</li>
+						</ul>
 						</div>
-						<div className='h-full w-1/3 flex justify-end items-center'>
-							<ul class="flex flex-col p-4 mt-4 border rounded-lg bg-zinc-800 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
-								<li>
-								<a href="#project" class="block py-2 pl-3 pr-4 text-zinc-100 bg-blue-700 rounded md:bg-transparent md:p-0" aria-current="page">Проект</a>
-								</li>
-								<li>
-								<a href="#team" class="block py-2 pl-3 pr-4 text-zinc-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Команда</a>
-								</li>
-								<li>
-								<a href="#take_part" class="block py-2 pl-3 pr-4 text-zinc-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Участники</a>
-								</li>
-								<li>
-								<a href="#about" class="block py-2 pl-3 pr-4 text-zinc-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">О нас</a>
-								</li>
-								<li>
-								<a href="#roadmap" class="block py-2 pl-3 pr-4 text-zinc-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">RoadMap</a>
-								</li>
-							</ul>
+					</div>
+				</nav>
+			</header>
+			<div className="w-full" style={{height: "40em"}}>
+				<Carousel slideInterval={5000}>
+				<div className="bg-center bg-no-repeat bg-[url('https://openartsforum.com/wp-content/uploads/2019/07/WAX-1.png')] bg-cover h-full py-24 px-32 flex">
+					<h2 className='font-sans font-semibold text-orange-50/80 self-end text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'>Lorem ipsum</h2>
+				</div>
+				<div className="bg-center bg-no-repeat bg-[url('https://openartsforum.com/wp-content/uploads/2019/07/WAX-1.png')] bg-cover h-full py-24 px-32 flex">
+					<h2 className='font-sans font-semibold text-orange-50/80 self-end text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'>Lorem ipsum</h2>
+				</div>
+				<div className="bg-center bg-no-repeat bg-[url('https://openartsforum.com/wp-content/uploads/2019/07/WAX-1.png')] bg-cover h-full py-24 px-32 flex">
+					<h2 className='font-sans font-semibold text-orange-50/80 self-end text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'>Lorem ipsum</h2>
+				</div>
+				<div className="bg-center bg-no-repeat bg-[url('https://openartsforum.com/wp-content/uploads/2019/07/WAX-1.png')] bg-cover h-full py-24 px-32 flex">
+					<h2 className='font-sans font-semibold text-orange-50/80 self-end text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'>Lorem ipsum</h2>
+				</div>
+				<div className="bg-center bg-no-repeat bg-[url('https://openartsforum.com/wp-content/uploads/2019/07/WAX-1.png')] bg-cover h-full py-24 px-32 flex">
+					<h2 className='font-sans font-semibold text-orange-50/80 self-end text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'>Lorem ipsum</h2>
+				</div>
+				</Carousel>
+			</div>
+			<div className='flex items-center h-16'>
+				<hr class="w-64 h-0.5 mx-auto bg-zinc-600 border-0 rounded sm: w-80"></hr>
+			</div>
+			<div className='h-1/5 flex justify-center items-end pb-12'>
+				<div className='rounded-lg flex flex-col justify-center items-center w-3/5 bg-neutral-800 px-8 py-4 box-border sm:px-10 sm:py-6 xl:px-12 xl:py-8' style={{minWidth: '300px'}}>
+					<p class="text-zinc-400 text-sm text-left font-light md:text-base lg:text-lg xl:text-xl">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quia <span className='font-bold text-zinc-200 underline decoration-2 decoration-sky-700'>quibusdam ut</span> dolor amet voluptatum odio voluptatibus ab praesentium odit <span className='font-bold text-zinc-200 underline decoration-2 decoration-pink-800'>nisi</span>, sequi quis quos voluptates <span className='font-bold text-zinc-200 underline decoration-2 decoration-pink-800'>laudantium suscipit,</span> nemo porro qui!
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima natus sint a quod dolores dolorum suscipit tempore officia debitis eveniet in corrupti <span className='font-bold text-zinc-200 underline decoration-2 decoration-indigo-800'>molestiae, nulla</span> sequi facere quisquam veritatis quo quam.
+					</p>
+				</div>
+			</div>
+			<div className='mb-24 w-full h-full flex flex-col justify-around items-center xl:flex-row' id="team">
+				<div className='rounded-lg p-4 h-full flex flex-col justify-center items-center w-3/5 bg-neutral-800 mb-8 sm:w-4/5 md:w-3/5 xl:mb-0 xl:w-2/5' style={{minWidth: '300px'}}>
+					<div className='w-full h-1/3 flex flex-col sm:flex-row'>
+						<div className='w-full h-full flex p-4'>
+							<Avatar img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded>
+								<div className="space-y-1 font-medium text-white text-left">
+									<div>Name Surname</div>
+									<div className="text-sm text-gray-400">CEO</div>
+								</div>
+							</Avatar>
 						</div>
-					</nav>
+						<div className='w-full h-full flex p-4'>
+							<Avatar
+							img="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+							rounded={true}
+							>
+								<div className="space-y-1 font-medium text-white text-left">
+									<div>
+									Name Surname
+									</div>
+									<div className="text-sm text-gray-400">
+									CTO
+									</div>
+								</div>
+							</Avatar>
+						</div>
+					</div>
+					<div className='w-full h-1/3 flex flex-col sm:flex-row'>
+						<div className='w-full h-full flex p-4'>
+							<Avatar
+							img="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+							rounded={true}
+							>
+								<div className="space-y-1 font-medium text-white text-left">
+									<div>
+									Name Surname
+									</div>
+									<div className="text-sm text-gray-400">
+									Fullstack developer
+									</div>
+								</div>
+							</Avatar>
+						</div>
+						<div className='w-full h-full flex p-4'>
+							<Avatar
+							img="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
+							rounded={true}
+							>
+								<div className="space-y-1 font-medium text-white text-left">
+									<div>
+									Name Surname
+									</div>
+									<div className="text-sm text-gray-400">
+									Backend developer
+									</div>
+								</div>
+							</Avatar>
+						</div>
+					</div>
+					<div className='w-full h-1/3 flex flex-col sm:flex-row'>
+						<div className='w-full h-full flex p-4'>
+							<Avatar
+							img="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+							rounded={true}
+							>
+								<div className="space-y-1 font-medium text-white text-left">
+									<div>
+									Name Surname
+									</div>
+									<div className="text-sm text-gray-400">
+									Designer
+									</div>
+								</div>
+							</Avatar>
+						</div>
+						<div className='w-full h-full flex p-4'>
+							<Avatar
+							img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+							rounded={true}
+							>
+								<div className="space-y-1 font-medium text-white text-left">
+									<div>
+									Name Surname
+									</div>
+									<div className="text-sm text-gray-400">
+									Tester
+									</div>
+								</div>
+							</Avatar>
+						</div>
+					</div>
 				</div>
-				<div className="h-2/3 sm:h-2/3 xl:h-2/3 2xl:h-2/3" id="project" style={{width: '100%'}}>
-					<Carousel slideInterval={5000} slide={false}>
-					<div className="bg-center bg-no-repeat bg-[url('https://openartsforum.com/wp-content/uploads/2019/07/WAX-1.png')] bg-cover h-full py-24 px-32 flex">
-						<h2 className='font-sans font-semibold text-8xl text-orange-50/80 self-end'>Lorem ipsum</h2>
+				<div className='rounded-lg p-4 h-full flex flex-col justify-center items-center w-3/5 bg-neutral-800 sm:w-4/5 md:w-3/5 xl:mb-0 xl:w-2/5' style={{minWidth: '300px'}}>
+					<div className='w-full h-1/2 flex flex-col sm:flex-row'>
+						<div className='w-full h-full p-4 flex justify-start items-center sm:w-1/2'>
+							<Avatar
+							img="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+							size={"lg"}
+							>
+								<div className="space-y-1 font-medium text-white text-left">
+									<h3 className='text-zinc-400 text-2xl font-bold'>
+										React
+									</h3>
+								</div>
+							</Avatar>
+						</div>
+						<div className='w-full h-full p-4 flex justify-start items-center sm:w-1/2'>
+							<Avatar
+							img="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+							size={"lg"}
+							>
+								<div className="space-y-1 font-medium text-white text-left">
+									<h3 className='text-zinc-400 text-2xl font-bold'>
+										JS
+									</h3>
+								</div>
+							</Avatar>
+						</div>
 					</div>
-					<div className="bg-center bg-no-repeat bg-[url('https://openartsforum.com/wp-content/uploads/2019/07/WAX-1.png')] bg-cover h-full py-24 px-32 flex">
-						<h2 className='font-sans font-semibold text-8xl text-orange-50/80 self-end'>Lorem ipsum</h2>
-					</div>
-					<div className="bg-center bg-no-repeat bg-[url('https://openartsforum.com/wp-content/uploads/2019/07/WAX-1.png')] bg-cover h-full py-24 px-32 flex">
-						<h2 className='font-sans font-semibold text-8xl text-orange-50/80 self-end'>Lorem ipsum</h2>
-					</div>
-					<div className="bg-center bg-no-repeat bg-[url('https://openartsforum.com/wp-content/uploads/2019/07/WAX-1.png')] bg-cover h-full py-24 px-32 flex">
-						<h2 className='font-sans font-semibold text-8xl text-orange-50/80 self-end'>Lorem ipsum</h2>
-					</div>
-					<div className="bg-center bg-no-repeat bg-[url('https://openartsforum.com/wp-content/uploads/2019/07/WAX-1.png')] bg-cover h-full py-24 px-32 flex">
-						<h2 className='font-sans font-semibold text-8xl text-orange-50/80 self-end'>Lorem ipsum</h2>
-					</div>
-					</Carousel>
-				</div>
-				<div className='flex items-center' style={{height: '6.33333%'}}>
-					<hr class="w-96 h-0.5 mx-auto bg-zinc-600 border-0 rounded"></hr>
-				</div>
-				<div className='h-1/5 flex justify-center items-end'>
-					<div className='rounded-lg p-4 h-full flex flex-col justify-center items-center w-3/5 bg-neutral-800'>
-						<div className='px-8 py-3'>
-							<p class="text-zinc-400 text-xl text-left font-light">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quia <span className='font-bold text-zinc-200 underline decoration-2 decoration-sky-700'>quibusdam ut</span> dolor amet voluptatum odio voluptatibus ab praesentium odit <span className='font-bold text-zinc-200 underline decoration-2 decoration-pink-800'>nisi</span>, sequi quis quos voluptates <span className='font-bold text-zinc-200 underline decoration-2 decoration-pink-800'>laudantium suscipit,</span> nemo porro qui!
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima natus sint a quod dolores dolorum suscipit tempore officia debitis eveniet in corrupti <span className='font-bold text-zinc-200 underline decoration-2 decoration-indigo-800'>molestiae, nulla</span> sequi facere quisquam veritatis quo quam.
-							</p>
+					<div className='w-full h-1/2 flex flex-col sm:flex-row'>
+						<div className='w-full h-full p-4 flex justify-start items-center sm:w-1/2'>
+							<Avatar
+							img="https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg"
+							size={"lg"}
+							>
+								<div className="space-y-1 font-medium text-white text-left">
+									<h3 className='text-zinc-400 text-2xl font-bold'>
+										TailWind
+									</h3>
+								</div>
+							</Avatar>
+						</div>
+						<div className='w-full h-full p-4 flex justify-start items-center sm:w-1/2'>
+							<Avatar
+							img="https://flowbite.com/docs/images/logo.svg"
+							size={"lg"}
+							>
+								<div className="space-y-1 font-medium text-white text-left">
+									<h3 className='text-zinc-400 text-2xl font-bold'>
+										Flowbite
+									</h3>
+								</div>
+							</Avatar>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className='mb-32' id="team" style={{height: "300px"}}>
-				<div className='w-full h-full flex justify-around items-center'>
-					<div className='rounded-lg p-4 h-full flex flex-col justify-center items-center w-2/5 bg-neutral-800'>
-						<div className='w-full h-1/3 flex'>
-							<div className='w-1/2 h-full flex p-4'>
-								<Avatar
-								img="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-								rounded={true}
-								>
-									<div className="space-y-1 font-medium text-white text-left">
-										<div>
-										Name Surname
-										</div>
-										<div className="text-sm text-gray-400">
-										CEO
-										</div>
-									</div>
-								</Avatar>
-							</div>
-							<div className='w-1/2 h-full flex p-4'>
-								<Avatar
-								img="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-								rounded={true}
-								>
-									<div className="space-y-1 font-medium text-white text-left">
-										<div>
-										Name Surname
-										</div>
-										<div className="text-sm text-gray-400">
-										CTO
-										</div>
-									</div>
-								</Avatar>
-							</div>
-						</div>
-						<div className='w-full h-1/3 flex'>
-							<div className='w-1/2 h-full flex p-4'>
-								<Avatar
-								img="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-								rounded={true}
-								>
-									<div className="space-y-1 font-medium text-white text-left">
-										<div>
-										Name Surname
-										</div>
-										<div className="text-sm text-gray-400">
-										Fullstack developer
-										</div>
-									</div>
-								</Avatar>
-							</div>
-							<div className='w-1/2 h-full flex p-4'>
-								<Avatar
-								img="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
-								rounded={true}
-								>
-									<div className="space-y-1 font-medium text-white text-left">
-										<div>
-										Name Surname
-										</div>
-										<div className="text-sm text-gray-400">
-										Backend developer
-										</div>
-									</div>
-								</Avatar>
-							</div>
-						</div>
-						<div className='w-full h-1/3 flex'>
-							<div className='w-1/2 h-full flex p-4'>
-								<Avatar
-								img="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-								rounded={true}
-								>
-									<div className="space-y-1 font-medium text-white text-left">
-										<div>
-										Name Surname
-										</div>
-										<div className="text-sm text-gray-400">
-										Designer
-										</div>
-									</div>
-								</Avatar>
-							</div>
-							<div className='w-1/2 h-full flex p-4'>
-								<Avatar
-								img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-								rounded={true}
-								>
-									<div className="space-y-1 font-medium text-white text-left">
-										<div>
-										Name Surname
-										</div>
-										<div className="text-sm text-gray-400">
-										Tester
-										</div>
-									</div>
-								</Avatar>
-							</div>
-						</div>
-					</div>
-					<div className='rounded-lg p-4 h-full flex flex-col justify-center items-center w-2/5 bg-neutral-800'>
-						<div className='w-full h-1/2 flex'>
-							<div className='w-1/2 h-full p-4 flex justify-start items-center'>
-								<Avatar
-								img="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-								size={"lg"}
-								>
-									<div className="space-y-1 font-medium text-white text-left">
-										<h3 className='text-zinc-400 text-2xl font-bold'>
-											React
-										</h3>
-									</div>
-								</Avatar>
-							</div>
-							<div className='w-1/2 h-full p-4 flex justify-start items-center'>
-								<Avatar
-								img="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-								size={"lg"}
-								>
-									<div className="space-y-1 font-medium text-white text-left">
-										<h3 className='text-zinc-400 text-2xl font-bold'>
-											JS
-										</h3>
-									</div>
-								</Avatar>
-							</div>
-						</div>
-						<div className='w-full h-1/2 flex'>
-							<div className='w-1/2 h-full p-4 flex justify-start items-center'>
-								<Avatar
-								img="https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg"
-								size={"lg"}
-								>
-									<div className="space-y-1 font-medium text-white text-left">
-										<h3 className='text-zinc-400 text-2xl font-bold'>
-											TailWind
-										</h3>
-									</div>
-								</Avatar>
-							</div>
-							<div className='w-1/2 h-full p-4 flex justify-start items-center'>
-								<Avatar
-								img="https://flowbite.com/docs/images/logo.svg"
-								size={"lg"}
-								>
-									<div className="space-y-1 font-medium text-white text-left">
-										<h3 className='text-zinc-400 text-2xl font-bold'>
-											Flowbite
-										</h3>
-									</div>
-								</Avatar>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className='flex justify-center mb-32' id='take_part' style={{height: "200px"}}>
-				<div className='w-4/6 flex'>
-					<div className='h-full w-2/6 flex items-center justify-center'>
-						<h2 className='text-5xl font-light text-slate-50/80'>Участники:</h2>
-					</div>
-					<div className='h-full w-4/6'>
-						<Carousel indicators={false} slide={false}>
-							<div className='h-full flex flex-col justify-around'>
-								<div className='flex justify-center'>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-									rounded={true}
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-								</div>
-								<div className='flex justify-center'>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-									rounded={true}
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-								</div>
-								<div className='flex justify-center'>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
-									rounded={true}
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-								</div>
-							</div>
-							<div className='h-full flex flex-col justify-around'>
-								<div className='flex justify-center'>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
-									rounded={true}
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-								</div>
-								<div className='flex justify-center'>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-									rounded={true}
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-								</div>
-								<div className='flex justify-center'>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-									rounded={true}
-									className='mr-8'
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-									<Avatar
-									img="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-									rounded={true}
-									>
-									<div className="space-y-1 font-medium text-white">
-										<div>
-										Name Surname
-										</div>
-									</div>
-									</Avatar>
-								</div>
-							</div>
-						</Carousel>
-					</div>
-				</div>
-			</div>
-			<div className='flex flex-col items-center mb-32' id="about" style={{height: "600px"}}>
-				<h2 className='text-7xl text-slate-50/80 font-light'>О нас</h2>
-				<div className='w-4/5 h-full flex'>
-					<div className='w-1/2 h-full'>
-						<div className='h-1/3 flex'>
-							<div className='h-full w-1/6 flex justify-center items-center'>
+			<div className='flex flex-col items-center mb-32' id="about">
+				<h2 className='text-6xl text-slate-50/80 font-light mb-8 2xl:text-7xl xl:mb-12'>О нас</h2>
+				<div className='w-4/5 h-full flex flex-col md:flex-row md:w-5/6 xl:w-11/12'>
+					<div className='w-full h-full md:mr-4 xl:mr-8'>
+						<div className='h-1/3 flex mb-4'>
+							<div className='h-full w-12 mr-4 flex justify-center items-center 2xl:w-16'>
 								<svg className='h-1/3' aria-hidden="true" fill="none" stroke="#eee" stroke-width="0.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 									<path d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 								</svg>
 							</div>
-							<div className='h-full w-5/6 flex justify-start items-center'>
-								<p className='text-left text-zinc-100 font-light text-lg'>
+							<div className='h-full w-full'>
+								<p className='text-left text-zinc-100 font-light text-base sm:text-lg md:text-base lg:text-lg 2xl:text-xl'>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem vero molestias quas aspernatur at a quaerat officiis quo impedit commodi labore ex perspiciatis assumenda obcaecati ad earum, magni delectus quidem.
 								</p>
 							</div>
 						</div>
-						<div className='h-1/3 flex'>
-							<div className='h-full w-1/6 flex justify-center items-center'>
+						<div className='h-1/3 flex mb-4'>
+							<div className='h-full w-12 mr-4 flex justify-center items-center 2xl:w-16'>
 								<svg className='h-1/3' aria-hidden="true" fill="none" stroke="#eee" stroke-width="0.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 									<path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" stroke-linecap="round" stroke-linejoin="round"></path>
 								</svg>
 							</div>
-							<div className='h-full w-5/6 flex justify-start items-center'>
-								<p className='text-left text-zinc-100 font-light text-lg'>
+							<div className='h-full w-full flex justify-start items-start'>
+								<p className='text-left text-zinc-100 font-light text-base sm:text-lg md:text-base lg:text-lg 2xl:text-xl'>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem vero molestias quas aspernatur at a quaerat officiis quo impedit commodi labore ex perspiciatis assumenda obcaecati ad earum, magni delectus quidem.
 								</p>
 							</div>
 						</div>
-						<div className='h-1/3 flex'>
-							<div className='h-full w-1/6 flex justify-center items-center'>
+						<div className='h-1/3 flex mb-4'>
+							<div className='h-full w-12 mr-4 flex justify-center items-center 2xl:w-16'>
 								<svg className='h-1/3' aria-hidden="true" fill="none" stroke="#eee" stroke-width="0.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 									<path d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" stroke-linecap="round" stroke-linejoin="round"></path>
 								</svg>
 							</div>
-							<div className='h-full w-5/6 flex justify-start items-center'>
-								<p className='text-left text-zinc-100 font-light text-lg'>
+							<div className='h-full w-full flex justify-start items-center'>
+								<p className='text-left text-zinc-100 font-light text-base sm:text-lg md:text-base lg:text-lg 2xl:text-xl'>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem vero molestias quas aspernatur at a quaerat officiis quo impedit commodi labore ex perspiciatis assumenda obcaecati ad earum, magni delectus quidem.
 								</p>
 							</div>
 						</div>
 					</div>
-					<div className='w-1/2 h-full'>
-						<div className='h-1/3 flex'>
-							<div className='h-full w-1/6 flex justify-center items-center'>
+					<div className='w-full h-full'>
+						<div className='h-1/3 flex mb-4'>
+							<div className='h-full w-12 mr-4 flex justify-center items-center 2xl:w-16'>
 								<svg className='h-1/3' aria-hidden="true" fill="none" stroke="#eee" stroke-width="0.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 									<path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" stroke-linecap="round" stroke-linejoin="round"></path>
 								</svg>
 							</div>
-							<div className='h-full w-5/6 flex justify-start items-center'>
-								<p className='text-left text-zinc-100 font-light text-lg'>
+							<div className='h-full w-full flex justify-start items-center'>
+								<p className='text-left text-zinc-100 font-light text-base sm:text-lg md:text-base lg:text-lg 2xl:text-xl'>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem vero molestias quas aspernatur at a quaerat officiis quo impedit commodi labore ex perspiciatis assumenda obcaecati ad earum, magni delectus quidem.
 								</p>
 							</div>
 						</div>
-						<div className='h-1/3 flex'>
-							<div className='h-full w-1/6 flex justify-center items-center'>
+						<div className='h-1/3 flex mb-4'>
+							<div className='h-full w-12 mr-4 flex justify-center items-center 2xl:w-16'>
 								<svg className='h-1/3' aria-hidden="true" fill="none" stroke="#eee" stroke-width="0.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 									<path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" stroke-linecap="round" stroke-linejoin="round"></path>
 								</svg>
 							</div>
-							<div className='h-full w-5/6 flex justify-start items-center'>
-								<p className='text-left text-zinc-100 font-light text-lg'>
+							<div className='h-full w-full flex justify-start items-center'>
+								<p className='text-left text-zinc-100 font-light text-base sm:text-lg md:text-base lg:text-lg 2xl:text-xl'>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem vero molestias quas aspernatur at a quaerat officiis quo impedit commodi labore ex perspiciatis assumenda obcaecati ad earum, magni delectus quidem.
 								</p>
 							</div>
 						</div>
 						<div className='h-1/3 flex'>
-							<div className='h-full w-1/6 flex justify-center items-center'>
+							<div className='h-full w-12 mr-4 flex justify-center items-center 2xl:w-16'>
 								<svg className='h-1/3' aria-hidden="true" fill="none" stroke="#eee" stroke-width="0.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 									<path d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
 								</svg>
 							</div>
-							<div className='h-full w-5/6 flex justify-start items-center'>
-								<p className='text-left text-zinc-100 font-light text-lg'>
+							<div className='h-full w-full flex justify-start items-center'>
+								<p className='text-left text-zinc-100 font-light text-base sm:text-lg md:text-base lg:text-lg 2xl:text-xl'>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem vero molestias quas aspernatur at a quaerat officiis quo impedit commodi labore ex perspiciatis assumenda obcaecati ad earum, magni delectus quidem.
 								</p>
 							</div>
@@ -526,9 +301,9 @@ function App() {
 					</div>
 				</div>
 			</div>
-			<div className='flex flex-col items-center justify-between mb-32' id="roadmap" style={{height: "450px"}}>
-				<h2 className='text-7xl text-slate-50/80 font-light'>RoadMap</h2>
-				<div className='w-3/5'>
+			<div className='flex flex-col items-center justify-between mb-16 lg:mb-32' id="roadmap">
+				<h2 className='text-6xl text-slate-50/80 font-light mb-16 xl:text-7xl'>RoadMap</h2>
+				<div className='w-4/5 sm:mb-4' style={{maxWidth: '1150px'}}>
 					<Timeline horizontal={true}>
 						<Timeline.Item>
 							<Timeline.Point/>
@@ -536,7 +311,7 @@ function App() {
 							<Timeline.Title className='text-white text-left'>
 								Lorem ipsum v1.0.0
 							</Timeline.Title>
-							<Timeline.Time className='flex'>
+							<Timeline.Time className='flex text-left'>
 								Released on March 2, 2023
 							</Timeline.Time>
 							<Timeline.Body className='text-left'>
@@ -550,7 +325,7 @@ function App() {
 							<Timeline.Title className='text-white text-left'>
 								Lorem ipsum v1.2.0
 							</Timeline.Title>
-							<Timeline.Time className='flex'>
+							<Timeline.Time className='flex text-left'>
 								Released on March 2, 2023
 							</Timeline.Time>
 							<Timeline.Body className='text-left'>
@@ -564,7 +339,7 @@ function App() {
 							<Timeline.Title className='text-white text-left'>
 								Lorem ipsum v1.2.1
 							</Timeline.Title>
-							<Timeline.Time className='flex'>
+							<Timeline.Time className='flex text-left'>
 								Released on March 2, 2023
 							</Timeline.Time>
 							<Timeline.Body className='text-left'>
@@ -574,7 +349,7 @@ function App() {
 						</Timeline.Item>
 					</Timeline>
 				</div>
-				<div className='w-3/5'>
+				<div className='w-4/5' style={{maxWidth: '1150px'}}>
 					<Timeline horizontal={true}>
 						<Timeline.Item>
 							<Timeline.Point/>
@@ -582,7 +357,7 @@ function App() {
 							<Timeline.Title className='text-white text-left'>
 								Lorem ipsum v2.0.0
 							</Timeline.Title>
-							<Timeline.Time className='flex'>
+							<Timeline.Time className='flex text-left'>
 								Released on March 2, 2023
 							</Timeline.Time>
 							<Timeline.Body className='text-left'>
@@ -596,7 +371,7 @@ function App() {
 							<Timeline.Title className='text-white text-left'>
 								Lorem ipsum v3.2.0
 							</Timeline.Title>
-							<Timeline.Time className='flex'>
+							<Timeline.Time className='flex text-left'>
 								Released on March 2, 2023
 							</Timeline.Time>
 							<Timeline.Body className='text-left'>
@@ -610,7 +385,7 @@ function App() {
 							<Timeline.Title className='text-white text-left'>
 								Lorem ipsum v3.6.9
 							</Timeline.Title>
-							<Timeline.Time className='flex'>
+							<Timeline.Time className='flex text-left'>
 								Released on March 2, 2023
 							</Timeline.Time>
 							<Timeline.Body className='text-left'>
