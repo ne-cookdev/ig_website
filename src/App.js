@@ -73,6 +73,19 @@ function App() {
 					</p>
 				</div>
 			</div>
+			<div className="w-full flex justify-center mb-16">
+				<div class="max-w-sm border-2 rounded-lg shadow border-neutral-800 p-4 w-3/5 md:w-auto" style={{minWidth: '300px'}}>
+					<a href="#">
+						<img class="rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
+					</a>
+					<div class="p-5">
+						<a href="#">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Noteworthy technology acquisitions 2021</h5>
+						</a>
+						<p class="mb-3 font-normal text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+					</div>
+				</div>
+			</div>
 			<div className='mb-24 w-full h-full flex flex-col justify-around items-center xl:flex-row' id="team">
 				<div className='rounded-lg p-4 h-full flex flex-col justify-center items-center w-3/5 bg-neutral-800 mb-8 sm:w-4/5 md:w-3/5 xl:mb-0 xl:w-2/5' style={{minWidth: '300px'}}>
 					<div className='w-full h-1/3 flex flex-col sm:flex-row'>
