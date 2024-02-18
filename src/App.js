@@ -27,16 +27,19 @@ function App() {
 							<a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 text-white md:text-blue-500" aria-current="page">Home</a>
 							</li>
 							<li>
-							<a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">About</a>
+							<a href="#projects" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Projects</a>
 							</li>
 							<li>
-							<a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:dark:hover:bg-transparent">Services</a>
+							<a href="#stack" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:dark:hover:bg-transparent">Stack</a>
 							</li>
 							<li>
-							<a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+							<a href="#about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:dark:hover:bg-transparent">About</a>
 							</li>
 							<li>
-							<a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:dark:hover:bg-transparent">Contact</a>
+							<a href="#roadmap" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:dark:hover:bg-transparent">Roadmap</a>
+							</li>
+							<li>
+							<a href="#contacts" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:dark:hover:bg-transparent">Contacts</a>
 							</li>
 						</ul>
 						</div>
@@ -73,7 +76,7 @@ function App() {
 					</p>
 				</div>
 			</div>
-			<div className="w-full flex justify-center mb-16">
+			<div className="w-full flex justify-center mb-16" id='projects'>
 				<div class="max-w-sm border-2 rounded-lg shadow border-neutral-800 p-4 w-3/5 md:w-auto" style={{minWidth: '300px'}}>
 					<a href="#">
 						<img class="rounded-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
@@ -87,7 +90,7 @@ function App() {
 				</div>
 			</div>
 			<div className='mb-24 w-full h-full flex flex-col justify-around items-center xl:flex-row' id="team">
-				<div className='rounded-lg p-4 h-full flex flex-col justify-center items-center w-3/5 bg-neutral-800 mb-8 sm:w-4/5 md:w-3/5 xl:mb-0 xl:w-2/5' style={{minWidth: '300px'}}>
+				<div className='rounded-lg p-4 h-full flex flex-col justify-center items-center w-3/5 bg-neutral-800 mb-8 sm:w-4/5 md:w-3/5 xl:mb-0 xl:w-2/5' style={{minWidth: '300px'}} id='stack'>
 					<div className='w-full h-1/3 flex flex-col sm:flex-row'>
 						<div className='w-full h-full flex p-4'>
 							<Avatar img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded>
@@ -409,7 +412,7 @@ function App() {
 					</Timeline>
 				</div>
 			</div>
-			<footer class="p-4 bg-zinc-800 sm:p-6">
+			<footer class="p-4 bg-zinc-800 sm:p-6" id='contacts'>
 			<div class="md:flex md:justify-between">
 				<div class="mb-6 md:mb-0">
 					<a href="https://flowbite.com/" class="flex items-center">
